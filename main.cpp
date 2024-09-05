@@ -3,19 +3,21 @@
 
 #include "canvas.h"
 
+using namespace std;
+
 void ejemplo_smart_pointer() {
   int* ptr;
   ptr = new int;
   auto ptr2 = ptr;
   delete ptr;
   
-  std::unique_ptr<int> uptr;        // int* ptr;
-  uptr = std::make_unique<int>(44); // ptr = new int;
+  unique_ptr<int> uptr;        // int* ptr;
+  uptr = make_unique<int>(44); // ptr = new int;
   
-  auto uptr2 = std::move(uptr);
+  auto uptr2 = move(uptr);
   
-  std::shared_ptr<int> sptr;        // int* ptr;
-  sptr = std::make_shared<int>(44); // ptr = new int;
+  shared_ptr<int> sptr;        // int* ptr;
+  sptr = make_shared<int>(44); // ptr = new int;
   
   auto sptr2 = sptr;
   auto sptr3 = sptr;
@@ -31,7 +33,6 @@ void ejemplo_1() {
   
   c.draw();
 }
-
 
 int main() {
   ejemplo_1();
